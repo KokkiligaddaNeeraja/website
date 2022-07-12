@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Web Design</title>
+<link rel='stylesheet' type='text/css' href='design.css'>
+<style type="text/css">
+
+#bd{
+	margin-top: 50px;
+	background-image: linear-gradient(yellow,orange);
+}
+.login{
+	height: 300px;
+	width: 300px;
+	background-color: greenyellow;
+	text-align:center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 5px 5px darkcyan;
+}
+h1{
+	font-family:Harlow Solid ;
+	color: red;
+	text-decoration: underline;
+
+}
+
+
+</style>
+<script type="text/javascript">
+function validate2()
+{
+    var d=document.getElementById("idno").value;
+    var r=/^(n|N)18(0|1)\d{3}$/
+    if(r.test(d)==false)
+    {
+        alert("please enter valid idno");
+        return false;
+    }
+ } 
+</script>
+</head>
+<body id='id'>
+<a href="#" id='top'>
+<div id='main-header'>
+    <div class='main-1'>
+        <img src='rose.jpg' width='100px' height='120px' style='border-radius: 40%;'>
+    </div>
+    <div class='main-2'>
+        <h1>Web Design</h1>
+    </div>
+    <div class='main-3'>
+        <a href="#" class="menu">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </a>
+    </div>  
+</div>
+<div id='nav-main'>
+    <ul id="nav-links">
+    <li><a href="home.html" target="_self"><img class='image'src='h.jpg' width='35px' height="25px" style='border-radius: 50%;'></a></li>
+    <li><a href="#"><img src="e.jpg" width='50px' height='30px' style="border-radius: 40%;margin-top: 5px;"></a>
+        <ul class='submenu1'>
+            <li><a href='#'>Login</a></li>
+            <li><a href='#'>Register</a></li>
+        </ul>
+    </li>
+    <li><a href="#"><img src='w.jpg' width='40px'height="30px"style='border-radius: 40%;margin-top: 5px;'><span>&#9660</span></a>
+        
+        <ul class="submenu1">
+            <li><a href="#">ECE</a></li>
+            <li><a href="#">CSE<span>&#9660</span></a>
+                <ul class="submenu2"> 
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Student</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MECH</a></li>
+        </ul>
+    </li>
+    <li><a href="contact.html"><img src="c.jpg" width="30px" height="25px"style='border-radius: 40%;margin-top: 5px;'></a></li>
+</ul>
+</div><br>
+
+<center>
+<div class='login'>
+	<h1>Login</h1>
+	<form action="\s.php" method="post" onsubmit="return validate2();">
+		<label>Student ID :</label>
+		<input type='text' id='idno' required><br><br>
+		<label>Password : </label>
+		<input type='password' required><br><br>
+		<input type='submit' value='Submit'>
+	</form>
+</div>
+</center>
+<footer id='main-footer'>
+	<p>copy right &copy; K.Neeraja 2022</p>
+	
+	<div class='up-arrow'>
+		<a href="#top">
+		<img src="up.png" height="30px" width="20px" ></a>	
+	</div>
+	<div class='foot'>
+		view count:
+		<img src="https://hitwebcounter.com/counter/counter.php?page=8012542&style=0001&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
+	</div>
+</footer>
+</body>
+</html>

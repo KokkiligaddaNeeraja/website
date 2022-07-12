@@ -1,0 +1,271 @@
+<html>
+<head>
+    <title>Web Design</title>
+    <link rel='stylesheet' type='text/css' href='design.css'>
+<script type="text/javascript">
+function validate3()
+{
+    var j1=/[a-z,A-Z]*/
+    var j=document.getElementById("first").value;
+    function fname()
+    {
+        document.getElementById("fi").style.visibility="hidden";
+    }
+    if(j.length<4 || j1.test(j)==false)
+    {
+        document.getElementById("fi").style.visibility="visible";
+        setTimeout(fname,3000);
+        return false;
+    }
+    var j2=document.getElementById("last").value;
+    function lname()
+    {
+        document.getElementById("li").style.visibility="hidden";
+    }
+    if(j2.length<4 || j1.test(j2)==false)
+    {
+        document.getElementById("li").style.visibility="visible";
+        setTimeout(lname,3000);
+        return false;
+    }
+    var j3=document.getElementById("mid").value;
+    function mname()
+    {
+        document.getElementById("li").style.visibility="hidden";
+    }
+    if(j1.test(j3)==false)
+    {
+        document.getElementById("mi").style.visibility="visible";
+        setTimeout(mname,3000);
+        return false;
+    }
+    document.getElementById("full").value=j+j2;
+    var m1=document.getElementById("i").checked;
+    var m2=document.getElementById("u").checked;
+    var ip=/^[6-9]\d{9}$/;
+    var up=/\d{3}-\d{3}-\d{4}/;
+    var p=document.getElementById("p").value;
+    function pno()
+    {
+        document.getElementById("pn").style.visibility="hidden";
+    }
+    if(m1)
+    {
+        if(ip.test(p)==false)
+        {
+            document.getElementById("pn").style.visibility="visible";
+            setTimeout(pno,3000);
+            return false;
+    }
+    }
+    else if(m2)
+    {
+
+        if(up.test(p)==false)
+        {
+            document.getElementById("pn").style.visibility="visible";
+            setTimeout(pno,3000);
+            return false;
+        }
+    }
+var s=document.getElementById("pass").value;
+function password()
+{
+    document.getElementById("pa").style.visibility="hidden";
+}
+if(s.length<6)
+{
+    document.getElementById("pa").style.visibility="visible";
+    setTimeout(password,3000)
+        return false;
+}
+var s=document.getElementById("te").value;
+var s1="";
+for(let i of s)
+{
+    if(isNaN(i))
+    {
+        s1=s1+i;
+    }
+}
+document.getElementById("te").value=s1;
+function hobbies()
+{
+    document.getElementById("pp").style.visibility="hidden";
+}
+var pp=hb();
+if(pp<2)
+{
+    document.getElementById("pp").style.visibility="visible";
+    setTimeout(hobbies,3000);
+        return false;
+}
+/*var ss=dob();
+if(ss==false)
+{
+    document.getElementById("db1").style.visibility="visible";
+        return false;
+}*/
+    var ag=document.getElementById("ag").checked;
+    if(!ag)
+    {
+        alert("please accept terms and conditions");
+        return false;
+    }
+    var kk=/^[a-z,A-Z,0-9][0-9,A-Z,a-z,-,.]*@[a-z]{3,6}\.[a-z]{2,3}(\.)?([a-z])?([a-z])?$/
+    var em=document.getElementById("em").value;
+    function email()
+    {
+        document.getElementById("ema").style.visibility="hidden";
+    }
+    if(kk.test(em)==false)
+    {
+        document.getElementById("ema").style.visibility="visible";
+        setTimeout(email,3000);
+        return false;
+    }
+    var bf=BornDay();
+    function bd()
+    {
+        document.getElementById("db1").style.visibility="hidden";
+    }
+    if(bf==false)
+    {
+        document.getElementById("db1").style.visibility="visible";
+        setTimeout(bd,3000);
+        return false;
+}
+function hb()
+{
+    var a=document.getElementById("h1").checked;
+    var b=document.getElementById("h2").checked;
+    var c=document.getElementById("h3").checked;
+    var d=document.getElementById("h4").checked;
+    var e=[a,b,c,d];
+    var count=0;
+    for(let i=0;i<e.length;i++)
+    {
+        if(e[i]==true)
+        {
+            count=count+1;
+        }
+    }
+    return count;
+}
+function change()
+{
+    document.getElementById("ppu").src="eye1.png";
+    document.getElementById("pass").type="text";
+}
+function unchange()
+{
+    document.getElementById("ppu").src="eye.png";
+    document.getElementById("pass").type="password";
+}
+function reset()
+{
+    alert("do you want reset");
+}
+function BornDay()
+{
+    var dat=document.getElementById("db").value;
+    var dob=/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec) ([0-2][0-9]|[3](0|1)) \d{4}$/;
+    var d=new Date();
+    if(dob.test(dat)==false)
+    {
+        return false;
+    }
+    var db=new Date(dat);
+    if(d<db)
+    {
+        alert("you are not born");
+    }
+    else
+    {
+        alert("your age is: "+(d.getYear()-db.getYear()));
+    }
+}
+        
+</script>
+</head>
+<body>
+<a href="#" id='top'>
+<div id='main-header'>
+    <div class='main-1'>
+        <img src='rose.jpg' width='100px' height='120px' style='border-radius: 40%;'>
+    </div>
+    <div class='main-2'>
+        <h1>Web Design</h1>
+    </div>
+    <div class='main-3'>
+        <a href="#" class="menu">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </a>
+    </div>  
+</div>
+<div id='nav-main'>
+    <ul id="nav-links">
+    <li><a href="home.html" target="_self"><img class='image'src='h.jpg' width='35px' height="25px" style='border-radius: 50%;'></a></li>
+    <li><a href="#"><img src="e.jpg" width='50px' height='30px' style="border-radius: 40%;margin-top: 5px;"></a>
+        <ul class='submenu1'>
+            <li><a href='#'>Login</a></li>
+            <li><a href='#'>Register</a></li>
+        </ul>
+    </li>
+    <li><a href="#"><img src='w.jpg' width='40px'height="30px"style='border-radius: 40%;margin-top: 5px;'><span>&#9660</span></a>
+        
+        <ul class="submenu1">
+            <li><a href="#">ECE</a></li>
+            <li><a href="#">CSE<span>&#9660</span></a>
+                <ul class="submenu2"> 
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Student</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MECH</a></li>
+        </ul>
+    </li>
+    <li><a href="contact.html"><img src="c.jpg" width="30px" height="25px"style='border-radius: 40%;margin-top: 5px;'></a></li>
+</ul>
+</div><br>
+<center>
+<div class="forms">
+<h1>Registration From</h1>
+<form action="\s.php" method="post" onsubmit="return validate3();">
+    <table><tr><td>FirstName:</td><td><input type="text" id="first"><label style="color:red;border:2px solid red; visibility:hidden;" id="fi">Invalid firsname</label></td></tr>
+        <tr><td>LastName:</td><td><input type="text" id="last"><label style="color:red;border:2px solid red; visibility:hidden;" id="li">Invalid last name</label></td></tr>
+        <tr><td>MiddleName:</td><td><input type="text" id="mid"><label style="color:red;border:2px solid red; visibility:hidden;" id="mi">Invalid  middle name</label></td></tr>
+        <tr><td>FullName:</td><td><input type="text" id="full"></td></tr>
+        <tr><td>Nation:</td><td>India:<input type="radio" name="j" id="i" checked>USA:<input type="radio" name="j" id="u" checked></td></tr>
+        <tr><td>Phone Number:</td><td><input type="text" name="" id="p"><label style="color:red;border:2px solid red; visibility:hidden;" id="pn">Invalid mobile number</label></td></tr>
+        <tr><td>password:</td><td><input type="password" name="" id="pass" onmouseover="change();" onmouseout="unchange();"><img src="eye.png" width="20px" height="15px" id="ppu"><label style="color:red;border:2px solid red; visibility:hidden;" id="pa">invalid password</label></td></tr>
+        <tr><td>Hobbies:</td><td><input type="checkbox" id="h1">Drawing<input type="checkbox" id="h2">
+        reading books<input type="checkbox" id="h3">watching movies<input type="checkbox" id="h4">games<label style="color:red;border:2px solid red; visibility:hidden;" id="pp">invalid data</label></td></tr>
+        <tr><td>Address</td><td><textarea rows="10" cols="10" id="te"></textarea></td></tr>
+        <tr><td>Date of Birth:</td><td><input type="text" id="db"><label style="color:red;border:2px solid red; visibility:hidden;" id="db1">invalid date</label></td></tr>
+        <tr><td>Email</td><td><input type="email" name="" id="em"><label style="color:red;border:2px solid red; visibility:hidden;"id="ema">invalid email</label></td></tr>
+         <!--<tr><td>passPhoto:</td><td><input type="file" id="file"  multipleaccept="image/png"></td></tr>-->
+        <tr><td>Reset</td><td><input type="reset" name="" id="re"></td></tr>
+        <tr><td>Agree</td><td><input type="checkbox"  id="ag"></td></tr>
+        <tr><td></td><td><input type="submit" value="register"></td></tr>
+    </table>
+</form>
+</div>
+</center>
+</form>
+<footer id='main-footer'>
+    <p>copy right &copy; K.Neeraja 2022</p>
+    
+    <div class='up-arrow'>
+        <a href="#top">
+        <img src="up.png" height="30px" width="20px" ></a>  
+    </div>
+    <div class='foot'>
+        view count:
+        <img src="https://hitwebcounter.com/counter/counter.php?page=8012542&style=0001&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
+    </div>
+</footer>
+</body>
+</html>
